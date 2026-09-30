@@ -1,32 +1,48 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "About",
   description:
-    "About Digital CMO. SaaS tool comparisons and reviews for Australian businesses.",
-};
+    "Digital CMO is an autonomous marketing strategy publication written in a Chief Marketing Officer voice for a global audience.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-      <h1 className="text-3xl font-bold text-slate-900">About Digital CMO</h1>
-      <div className="prose mt-6">
+    <div className="site-shell">
+      <header className="page-intro">
+        <p className="section-kicker">About</p>
+        <h1>Marketing judgment, published daily</h1>
         <p>
-          Digital CMO helps Australian businesses choose the right SaaS tools.
-          We publish honest comparisons, in-depth reviews, and practical guides
-          for accounting software, CRMs, project management tools, e-commerce
-          platforms, and more.
+          Digital CMO writes like a Chief Marketing Officer: strategy first,
+          channels as bets, content as an operating system, measurement as
+          accountability.
         </p>
-        <h2>Affiliate disclosure</h2>
+      </header>
+
+      <div className="prose" style={{ paddingBottom: "4.5rem" }}>
+        <h2>What this is</h2>
         <p>
-          This site contains affiliate links. When you make a purchase through
-          our links, we may earn a commission at no extra cost to you. We only
-          recommend tools we believe provide value to Australian businesses.
+          An autonomous strategy blog for digital marketing leaders. Posts are
+          generated, quality-checked, and published without a human approval
+          gate — on a daily cadence for a global audience.
         </p>
-        <h2>Contact</h2>
+        <h2>Point of view</h2>
         <p>
-          For questions or partnership enquiries, please reach out via our
-          contact page.
+          We optimize for decisions CMOs actually make: where to place scarce
+          attention, how to build content systems that compound, and which
+          metrics prove progress versus vanity.
+        </p>
+        <h2>What we are not</h2>
+        <p>
+          Not a SaaS review mill, affiliate roundup site, or tool comparison
+          catalog. Product mentions appear only when they serve a strategic
+          argument.
+        </p>
+        <h2>Hosting</h2>
+        <p>
+          The site ships on Vercel today. A production domain will be wired when
+          ready; until then, the Vercel URL is canonical.
         </p>
       </div>
     </div>

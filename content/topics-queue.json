@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-30T00:00:00.000Z",
+  "topics": [
+    {
+      "id": "seed-content-operating-system-a1b2c3",
+      "title": "Treat Content Like an Operating System, Not a Calendar",
+      "angle": "Argue that CMOs should fund content as a distribution and sales-enablement system with kill criteria, not a publishing obligation.",
+      "keywords": ["content systems", "editorial ops", "owned distribution"],
+      "status": "queued",
+      "source": "seed",
+      "createdAt": "2026-09-30T00:00:00.000Z",
+      "updatedAt": "2026-09-30T00:00:00.000Z",
+      "publishedAt": null,
+      "publishedSlug": null
+    },
+    {
+      "id": "seed-cmo-scorecard-d4e5f6",
+      "title": "The One-Page CMO Scorecard That Survives Finance Review",
+      "angle": "Define a weekly demand/brand/efficiency/risk scorecard executives and finance can share without vanity metrics.",
+      "keywords": ["measurement scorecard", "pipeline quality", "attribution honesty"],
+      "status": "queued",
+      "source": "seed",
+      "createdAt": "2026-09-30T00:00:01.000Z",
+      "updatedAt": "2026-09-30T00:00:01.000Z",
+      "publishedAt": null,
+      "publishedSlug": null
+    },
+    {
+      "id": "seed-agency-model-g7h8i9",
+      "title": "When to Fire the Retainer Mentality",
+      "angle": "Show how CMOs redesign agency and freelancer models around outcomes and capacity bets instead of forever retainers.",
+      "keywords": ["agency operating model", "team design", "capacity"],
+      "status": "queued",
+      "source": "seed",
+      "createdAt": "2026-09-30T00:00:02.000Z",
+      "updatedAt": "2026-09-30T00:00:02.000Z",
+      "publishedAt": null,
+      "publishedSlug": null
+    },
+    {
+      "id": "seed-brand-memory-j0k1l2",
+      "title": "Brand Memory Is a Pipeline Asset",
+      "angle": "Connect brand positioning and message architecture to pipeline quality for global B2B and B2C leaders alike.",
+      "keywords": ["brand positioning", "demand generation", "message architecture"],
+      "status": "queued",
+      "source": "seed",
+      "createdAt": "2026-09-30T00:00:03.000Z",
+      "updatedAt": "2026-09-30T00:00:03.000Z",
+      "publishedAt": null,
+      "publishedSlug": null
+    }
+  ]
+}
