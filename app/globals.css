@@ -58,8 +58,8 @@ body {
 
 @keyframes rise-in {
   from {
-    opacity: 0;
-    transform: translateY(18px);
+    opacity: 0.35;
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -87,24 +87,26 @@ body {
   }
 }
 
-.animate-rise {
-  animation: rise-in 0.8s ease-out both;
-}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-rise {
+    animation: rise-in 0.7s ease-out both;
+  }
 
-.animate-rise-delay {
-  animation: rise-in 0.9s ease-out 0.15s both;
-}
+  .animate-rise-delay {
+    animation: rise-in 0.8s ease-out 0.12s both;
+  }
 
-.animate-rise-delay-2 {
-  animation: rise-in 1s ease-out 0.3s both;
-}
+  .animate-rise-delay-2 {
+    animation: rise-in 0.9s ease-out 0.22s both;
+  }
 
-.animate-drift {
-  animation: drift 7s ease-in-out infinite;
-}
+  .animate-drift {
+    animation: drift 7s ease-in-out infinite;
+  }
 
-.animate-pulse-soft {
-  animation: pulse-soft 4s ease-in-out infinite;
+  .animate-pulse-soft {
+    animation: pulse-soft 4s ease-in-out infinite;
+  }
 }
 
 .prose {
