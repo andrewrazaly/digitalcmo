@@ -14,23 +14,24 @@ const typePaths: Record<string, string> = {
 
 export function ArticleCard({ article }: ArticleCardProps) {
   const basePath = typePaths[article.type] || "reviews";
-  const href = basePath === "best-tools"
-    ? `/best-tools/${article.slug}`
-    : `/${basePath}/${article.slug}`;
+  const href =
+    basePath === "best-tools"
+      ? `/best-tools/${article.slug}`
+      : `/${basePath}/${article.slug}`;
 
   return (
-    <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+    <article className="group border-b border-line pb-6 transition-colors last:border-0">
       <Link href={href} className="block">
-        <span className="text-xs font-medium uppercase tracking-wider text-slate-500">
-          {article.category}
+        <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">
+          {article.category?.replace(/-/g, " ") || article.type}
         </span>
-        <h2 className="mt-2 text-lg font-semibold text-slate-900 hover:text-slate-700">
+        <h2 className="font-display mt-2 text-xl font-bold tracking-tight text-ink transition-colors group-hover:text-accent-deep">
           {article.title}
         </h2>
-        <p className="mt-2 line-clamp-2 text-sm text-slate-600">
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">
           {article.description}
         </p>
-        <p className="mt-3 text-xs text-slate-500">
+        <p className="mt-3 text-xs text-muted/80">
           {new Date(article.publishedAt).toLocaleDateString("en-AU", {
             day: "numeric",
             month: "long",

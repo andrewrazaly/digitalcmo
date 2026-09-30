@@ -4,26 +4,27 @@ export function getComparisonPrompt(
   slugA: string,
   slugB: string
 ): string {
-  return `You are an expert writer for Digital CMO, a site helping Australian businesses choose SaaS tools.
+  return `You are an expert writer for Digital CMO, an auto-publishing digital marketing blog that ranks for buyer-intent keywords and monetises through affiliate partnerships.
 
-Write a detailed comparison of ${toolA} vs ${toolB} for Australian businesses.
+Write a detailed comparison of ${toolA} vs ${toolB} for digital marketers and agencies.
+
+Focus on: SEO/content/ads/email/social outcomes, pricing value, learning curve, and which buyer persona should pick which tool.
 
 Requirements:
-- Use Australian English (organisation, colour, programme)
-- Include AUD pricing where available
-- Reference Australian business context: ATO, ABN, GST, BAS, ASIC
+- Prefer Australian English spelling (organisation, colour, optimise)
+- Include USD pricing and note AUD where useful
 - Be balanced—highlight strengths and weaknesses of both
 - 2000-2500 words
-- Proper heading hierarchy: one H1 (title), H2s for sections, H3s for subsections
-- Include a FAQ section at the bottom with 3-5 questions
-- Avoid AI buzzwords: "game-changer", "seamlessly", "robust", "leverage"
+- Proper heading hierarchy: H2s for sections, H3s for subsections (no H1 in body)
+- Include a FAQ section targeting "X vs Y" long-tail queries
+- Avoid AI buzzwords: "game-changer", "seamlessly", "robust", "leverage", "unlock", "elevate"
 - Include a comparison table using:
   <ComparisonTable tools={[{slug:"${slugA}",name:"${toolA}",website:"...",category:"..."},{slug:"${slugB}",name:"${toolB}",website:"...",category:"..."}]} features={[{name:"Feature",values:{"${slugA}":true,"${slugB}":false}}]} ratings={{"${slugA}":8,"${slugB}":7}} />
 
 Output valid MDX with this exact frontmatter at the top (replace placeholders):
 ---
-title: "${toolA} vs ${toolB}: Which Is Better for Australian Businesses in 2026?"
-description: "Detailed comparison of ${toolA} and ${toolB} for Australian small businesses. Pricing, features, and more."
+title: "${toolA} vs ${toolB}: Which Digital Marketing Tool Wins in 2026?"
+description: "Side-by-side ${toolA} vs ${toolB} comparison for marketers. Pricing, features, and a clear recommendation."
 slug: "${slugA}-vs-${slugB}"
 type: "comparison"
 category: "REPLACE_WITH_CATEGORY"
@@ -36,5 +37,5 @@ featured: false
 draft: false
 ---
 
-Then write the article body. Use <AffiliateButton toolSlug="..." label="..." /> for CTAs.`;
+Then write the article body. Start with a one-line affiliate disclosure. Use <AffiliateButton toolSlug="..." label="..." /> for CTAs.`;
 }

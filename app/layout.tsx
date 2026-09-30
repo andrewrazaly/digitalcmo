@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Syne, Figtree, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const display = Syne({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["600", "700", "800"],
+});
+
+const body = Figtree({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -16,12 +23,29 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Digital CMO | SaaS Comparisons & Reviews for Australian Businesses",
+    default: "Digital CMO | Digital Marketing Blog That Ranks & Monetises",
     template: "%s | Digital CMO",
   },
   description:
-    "Compare and review SaaS tools for Australian businesses. Accounting, CRM, project management, e-commerce, and more.",
+    "Auto-publishing digital marketing comparisons, reviews, and playbooks—built to earn organic traffic and affiliate revenue.",
   metadataBase: new URL("https://digitalcmo.com.au"),
+  keywords: [
+    "digital marketing",
+    "SEO tools",
+    "email marketing",
+    "PPC",
+    "affiliate marketing",
+    "content marketing",
+  ],
+  openGraph: {
+    title: "Digital CMO | Digital Marketing Blog That Ranks & Monetises",
+    description:
+      "Comparisons, reviews, and guides for marketers who want traffic and revenue—not fluff.",
+    url: "https://digitalcmo.com.au",
+    siteName: "Digital CMO",
+    locale: "en_AU",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en-AU">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}
+        className={`${display.variable} ${body.variable} ${geistMono.variable} site-grain min-h-screen antialiased`}
       >
         <Header />
         <main className="min-h-screen">{children}</main>

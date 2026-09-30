@@ -32,8 +32,8 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
   }, [headings]);
 
   return (
-    <nav aria-label="Table of contents" className="border-l border-slate-200 pl-4">
-      <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+    <nav aria-label="Table of contents" className="border-l border-line pl-4">
+      <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
         On this page
       </h3>
       <ul className="space-y-2">
@@ -47,8 +47,8 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
               href={`#${id}`}
               className={
                 activeId === id
-                  ? "font-medium text-slate-900"
-                  : "text-slate-600 hover:text-slate-900"
+                  ? "font-medium text-accent-deep"
+                  : "text-muted hover:text-ink"
               }
             >
               {text}

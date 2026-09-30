@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "seo",
+    "name": "SEO",
+    "description": "Search engine optimisation tools, strategies, and playbooks for ranking content that attracts buyers.",
+    "keywords": ["seo tools", "keyword research", "technical seo", "link building", "local seo"]
+  },
+  {
+    "slug": "email-marketing",
+    "name": "Email Marketing",
+    "description": "Email platforms, automation flows, and list-growth tactics that turn subscribers into revenue.",
+    "keywords": ["email marketing software", "drip campaigns", "newsletter tools", "deliverability"]
+  },
+  {
+    "slug": "social-media",
+    "name": "Social Media Marketing",
+    "description": "Scheduling, analytics, and content systems for LinkedIn, Instagram, TikTok, and X.",
+    "keywords": ["social media tools", "content calendar", "social analytics"]
+  },
+  {
+    "slug": "ppc",
+    "name": "Paid Ads & PPC",
+    "description": "Google Ads, Meta Ads, and LinkedIn campaigns that convert without wasting budget.",
+    "keywords": ["google ads", "meta ads", "ppc strategy", "roas"]
+  },
+  {
+    "slug": "content-marketing",
+    "name": "Content Marketing",
+    "description": "Blog systems, AI writing workflows, and distribution strategies that compound organic traffic.",
+    "keywords": ["content strategy", "ai writing tools", "blog seo", "content calendar"]
+  },
+  {
+    "slug": "analytics",
+    "name": "Analytics & Attribution",
+    "description": "Measurement stacks that show which channels actually drive pipeline and revenue.",
+    "keywords": ["google analytics", "attribution", "conversion tracking"]
+  },
+  {
+    "slug": "marketing-automation",
+    "name": "Marketing Automation",
+    "description": "CRM and automation platforms that nurture leads and reduce manual follow-up.",
+    "keywords": ["marketing automation", "crm marketing", "lead nurturing"]
+  },
+  {
+    "slug": "design",
+    "name": "Creative & Design",
+    "description": "Design tools for ads, social creatives, landing pages, and brand assets at speed.",
+    "keywords": ["canva alternatives", "ad creative tools", "landing page design"]
+  }
+]

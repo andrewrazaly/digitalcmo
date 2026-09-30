@@ -1,22 +1,24 @@
 export function getGuidePrompt(topic: string, slug: string): string {
-  return `You are an expert writer for Digital CMO, a site helping Australian businesses choose SaaS tools.
+  return `You are an expert writer for Digital CMO, an auto-publishing digital marketing blog that ranks for buyer-intent keywords and monetises through affiliate partnerships.
 
-Write a how-to guide: "${topic}" for Australian businesses.
+Write a practical how-to guide: "${topic}".
+
+Audience: digital marketers, agency operators, and founders who want traffic and monetisation—not theory.
 
 Requirements:
-- Use Australian English (organisation, colour, programme)
-- Include AUD pricing where relevant
-- Reference Australian business context: ATO, ABN, GST, BAS, ASIC
-- Be practical and actionable
+- Prefer Australian English spelling (organisation, colour, optimise)
+- Be practical and actionable with numbered steps where useful
+- Mention relevant tools naturally (and use AffiliateButton where a tool CTA fits)
 - 2000-2500 words
-- Proper heading hierarchy: one H1 (title), H2s for sections, H3s for subsections
-- Include a FAQ section at the bottom with 3-5 questions
-- Avoid AI buzzwords: "game-changer", "seamlessly", "robust", "leverage"
+- Proper heading hierarchy: H2s for sections, H3s for subsections (no H1 in body)
+- Include a FAQ section with 3-5 long-tail search questions
+- Avoid AI buzzwords: "game-changer", "seamlessly", "robust", "leverage", "unlock", "elevate"
+- Tie advice back to measurable outcomes: traffic, leads, conversions, revenue
 
 Output valid MDX with this exact frontmatter at the top (replace placeholders):
 ---
 title: "${topic}"
-description: "How to ${topic.toLowerCase()} for Australian businesses. Step-by-step guide."
+description: "Practical guide: ${topic}. Steps, tools, and metrics that matter for digital marketers."
 slug: "${slug}"
 type: "guide"
 category: "REPLACE_WITH_CATEGORY"
@@ -28,5 +30,5 @@ featured: false
 draft: false
 ---
 
-Then write the article body.`;
+Then write the article body. Start with a one-line affiliate disclosure if tools are recommended.`;
 }

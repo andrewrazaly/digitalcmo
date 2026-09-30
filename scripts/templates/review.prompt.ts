@@ -1,22 +1,23 @@
 export function getReviewPrompt(toolName: string, toolSlug: string): string {
-  return `You are an expert writer for Digital CMO, a site helping Australian businesses choose SaaS tools.
+  return `You are an expert writer for Digital CMO, an auto-publishing digital marketing blog that ranks for buyer-intent keywords and monetises through affiliate partnerships.
 
-Write an in-depth review of ${toolName} (${toolSlug}) for Australian small businesses.
+Write an in-depth review of ${toolName} (${toolSlug}) for marketers, agencies, and growth-focused businesses (AU/NZ/US English ok; prefer Australian English spelling: organisation, colour, optimise).
+
+Focus on digital marketing outcomes: traffic, leads, conversions, ROAS, and workflow efficiency.
 
 Requirements:
-- Use Australian English (organisation, colour, programme)
-- Include AUD pricing where available
-- Reference Australian business context: ATO, ABN, GST, BAS, ASIC
+- Include pricing in USD and note AUD equivalents where useful
 - Be balanced—not everything is 9/10. Include genuine criticism
 - 2000-2500 words
-- Proper heading hierarchy: one H1 (title), H2s for sections, H3s for subsections
-- Include a FAQ section at the bottom with 3-5 questions
-- Avoid AI buzzwords: "game-changer", "seamlessly", "robust", "leverage"
+- Proper heading hierarchy: H2s for sections, H3s for subsections (no H1 in body—title is in frontmatter)
+- Include a FAQ section at the bottom with 3-5 questions targeting long-tail search queries
+- Avoid AI buzzwords: "game-changer", "seamlessly", "robust", "leverage", "unlock", "elevate"
+- Naturally mention where this tool fits vs alternatives (without stuffing keywords)
 
 Output valid MDX with this exact frontmatter at the top (replace placeholders):
 ---
-title: "${toolName} Review 2026: Is It Worth It for Australian Small Business?"
-description: "Detailed review of ${toolName} for Australian businesses. Pricing, features, pros and cons."
+title: "${toolName} Review 2026: Is It Worth It for Digital Marketers?"
+description: "Honest ${toolName} review for digital marketing teams. Pricing, features, pros, cons, and who should buy."
 slug: "${toolSlug}"
 type: "review"
 category: "REPLACE_WITH_CATEGORY"
@@ -29,5 +30,5 @@ featured: false
 draft: false
 ---
 
-Then write the article body. Use <ProsConsList pros={[...]} cons={[...]} /> for pros/cons. Use <AffiliateButton toolSlug="${toolSlug}" label="Visit ${toolName}" /> for CTAs.`;
+Then write the article body. Start with a one-line affiliate disclosure. Use <ProsConsList pros={[...]} cons={[...]} /> for pros/cons. Use <AffiliateButton toolSlug="${toolSlug}" label="Try ${toolName}" /> for CTAs (at least twice: mid-article and end).`;
 }

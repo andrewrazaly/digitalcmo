@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/content";
+import { getTopics } from "@/lib/topics";
 
 const SITE_URL = "https://digitalcmo.com.au";
 
@@ -26,11 +27,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: SITE_URL, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
     { url: `${SITE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${SITE_URL}/topics`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/compare`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/reviews`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/best-tools`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/guides`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
   ];
 
-  return [...staticPages, ...articleUrls];
+  const topicUrls: MetadataRoute.Sitemap = getTopics().map((t) => ({
+    url: `${SITE_URL}/topics/${t.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
+  }));
+
+  return [...staticPages, ...topicUrls, ...articleUrls];
 }
