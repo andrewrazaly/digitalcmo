@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "generate": "tsx scripts/generate-article.ts",
-    "publish": "tsx scripts/publish.ts"
+    "publish": "tsx scripts/publish.ts",
+    "seed-queue": "tsx scripts/seed-queue.ts"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

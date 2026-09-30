@@ -1,1 +1,109 @@
-[]
+[
+  {
+    "type": "comparison",
+    "slugA": "mailchimp",
+    "slugB": "activecampaign",
+    "slug": "mailchimp-vs-activecampaign"
+  },
+  {
+    "type": "comparison",
+    "slugA": "hootsuite",
+    "slugB": "buffer",
+    "slug": "hootsuite-vs-buffer"
+  },
+  {
+    "type": "comparison",
+    "slugA": "jasper",
+    "slugB": "copy-ai",
+    "slug": "jasper-vs-copy-ai"
+  },
+  {
+    "type": "review",
+    "toolSlug": "ahrefs",
+    "slug": "ahrefs"
+  },
+  {
+    "type": "review",
+    "toolSlug": "activecampaign",
+    "slug": "activecampaign"
+  },
+  {
+    "type": "review",
+    "toolSlug": "klaviyo",
+    "slug": "klaviyo"
+  },
+  {
+    "type": "review",
+    "toolSlug": "surfer",
+    "slug": "surfer"
+  },
+  {
+    "type": "review",
+    "toolSlug": "jasper",
+    "slug": "jasper"
+  },
+  {
+    "type": "roundup",
+    "category": "SEO tools",
+    "slug": "seo-tools",
+    "toolSlugs": [
+      "semrush",
+      "ahrefs",
+      "se-ranking",
+      "moz",
+      "surfer"
+    ]
+  },
+  {
+    "type": "roundup",
+    "category": "social media management tools",
+    "slug": "social-media-management-tools",
+    "toolSlugs": [
+      "hootsuite",
+      "buffer",
+      "later",
+      "sprout-social"
+    ]
+  },
+  {
+    "type": "roundup",
+    "category": "AI writing tools for marketers",
+    "slug": "ai-writing-tools",
+    "toolSlugs": [
+      "jasper",
+      "copy-ai",
+      "chatgpt",
+      "surfer"
+    ]
+  },
+  {
+    "type": "guide",
+    "topic": "How to Build an SEO Content Engine That Ranks in 2026",
+    "slug": "seo-content-engine-2026"
+  },
+  {
+    "type": "guide",
+    "topic": "Email Marketing Funnel for Digital Agencies",
+    "slug": "email-marketing-funnel-agencies"
+  },
+  {
+    "type": "guide",
+    "topic": "Google Ads vs Meta Ads: Where Should Small Brands Spend First?",
+    "slug": "google-ads-vs-meta-ads-budget"
+  },
+  {
+    "type": "guide",
+    "topic": "How to Monetise a Niche Blog with Affiliate Marketing",
+    "slug": "monetise-niche-blog-affiliate-marketing"
+  },
+  {
+    "type": "guide",
+    "topic": "Content Calendar System for Consistent Organic Traffic",
+    "slug": "content-calendar-organic-traffic"
+  },
+  {
+    "type": "guide",
+    "topic": "GA4 Setup Checklist for Marketing Teams",
+    "slug": "ga4-setup-checklist-marketing"
+  }
+]
