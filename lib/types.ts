@@ -1,37 +1,15 @@
-export type ArticleType = "review" | "comparison" | "roundup" | "guide";
-
-export interface ArticleFrontmatter {
+export type PostFrontmatter = {
   title: string;
   description: string;
   slug: string;
-  type: ArticleType;
-  category: string;
   tags: string[];
-  tools?: string[];
-  author: string;
   publishedAt: string;
   updatedAt: string;
-  featured: boolean;
-  draft: boolean;
-}
+  author: "Digital CMO" | string;
+};
 
-export interface ArticleContent {
-  frontmatter: ArticleFrontmatter;
+export type Post = {
+  frontmatter: PostFrontmatter;
   content: string;
-  headings: Heading[];
-  readingTime: number;
-}
-
-export interface Heading {
-  id: string;
-  text: string;
-  level: number;
-}
-
-export interface ToolData {
-  slug: string;
-  name: string;
-  website: string;
-  pricing?: string;
-  category: string;
-}
+  readingTime: string;
+};

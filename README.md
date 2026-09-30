@@ -1,36 +1,53 @@
 # Digital CMO
 
-SaaS tool comparisons and reviews for Australian businesses. Built with Next.js 15, TypeScript, Tailwind CSS, and MDX.
+Autonomous digital marketing strategy blog — written in a Chief Marketing Officer voice. Greenfield Next.js App Router site with git-backed MDX.
 
-## Quick Start
+## Quick start
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Scripts
+Open [http://localhost:3000](http://localhost:3000).
 
-- `npm run dev` - Start development server
-- `npm run build` - Production build
-- `npm run generate` - Generate one article from content-queue.json (requires ANTHROPIC_API_KEY)
-- `npm run publish` - Generate articles and push to git (e.g. `npm run publish -- --count 3`)
+## Routes
+
+| Path | Purpose |
+| --- | --- |
+| `/` | Brand hub |
+| `/blog` | Post index |
+| `/blog/[slug]` | Article |
+| `/about` | Brand / POV |
 
 ## Content
 
-- **Compare** - `/compare/[slug]` - Tool A vs Tool B
-- **Reviews** - `/reviews/[slug]` - Individual tool reviews
-- **Best Tools** - `/best-tools/[category]` - Roundups by category
-- **Guides** - `/guides/[slug]` - How-to guides
+- Posts: `content/posts/*.mdx`
+- Brand brief (for future prompts): `content/brand-brief.md`
 
-Content lives in `content/{reviews|compare|best-tools|guides}/*.mdx`.
+### Frontmatter schema
 
-## Deployment
+```yaml
+title: string
+description: string
+slug: string
+tags: string[]
+publishedAt: YYYY-MM-DD
+updatedAt: YYYY-MM-DD
+author: Digital CMO
+```
 
-Deploy to Vercel. Set `ANTHROPIC_API_KEY` for content generation.
+## Scripts
 
-## Data
+- `npm run dev` — development server
+- `npm run build` — production build
+- `npm run start` — serve production build
+- `npm run lint` — ESLint
 
-- `data/tools.json` - Tool metadata
-- `data/affiliates.json` - Affiliate URL mapping
-- `data/content-queue.json` - Article generation queue
+## Deploy
+
+Deploy to Vercel. Optional env:
+
+- `NEXT_PUBLIC_SITE_URL` — canonical origin (defaults to `VERCEL_URL`, then localhost)
+
+Cadence target: daily auto-publish (Phase 1+). Audience: global.

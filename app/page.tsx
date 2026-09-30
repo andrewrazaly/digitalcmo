@@ -1,87 +1,59 @@
 import Link from "next/link";
-import { ArticleCard } from "@/components/content/ArticleCard";
-import { getAllArticles } from "@/lib/content";
+import { PostListItem } from "@/components/content/PostListItem";
+import { getAllPosts } from "@/lib/posts";
+import { buildPageMetadata } from "@/lib/seo";
+import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+
+export const metadata = buildPageMetadata({
+  title: `${SITE_NAME} | Digital marketing strategy`,
+  description: SITE_TAGLINE,
+  path: "/",
+});
 
 export default function HomePage() {
-  const featured = getAllArticles().filter((a) => a.featured).slice(0, 3);
-  const recent = getAllArticles().slice(0, 6);
+  const posts = getAllPosts().slice(0, 3);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <section className="mb-16 text-center">
-        <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-          SaaS Tool Comparisons & Reviews for Australian Businesses
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
-          We compare and review the best accounting, CRM, project management,
-          and e-commerce tools to help you choose the right software for your
-          business.
-        </p>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="mb-6 text-xl font-semibold text-slate-900">
-          Browse by category
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Link
-            href="/compare"
-            className="rounded-lg border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md"
-          >
-            <span className="text-2xl">⚖️</span>
-            <h3 className="mt-2 font-semibold text-slate-900">Compare</h3>
-            <p className="mt-1 text-sm text-slate-600">
-              Side-by-side tool comparisons
-            </p>
-          </Link>
-          <Link
-            href="/reviews"
-            className="rounded-lg border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md"
-          >
-            <span className="text-2xl">📝</span>
-            <h3 className="mt-2 font-semibold text-slate-900">Reviews</h3>
-            <p className="mt-1 text-sm text-slate-600">
-              In-depth tool reviews
-            </p>
-          </Link>
-          <Link
-            href="/best-tools"
-            className="rounded-lg border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md"
-          >
-            <span className="text-2xl">🏆</span>
-            <h3 className="mt-2 font-semibold text-slate-900">Best Tools</h3>
-            <p className="mt-1 text-sm text-slate-600">
-              Curated roundups by category
-            </p>
-          </Link>
-          <Link
-            href="/guides"
-            className="rounded-lg border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md"
-          >
-            <span className="text-2xl">📚</span>
-            <h3 className="mt-2 font-semibold text-slate-900">Guides</h3>
-            <p className="mt-1 text-sm text-slate-600">
-              How-to guides and tips
-            </p>
-          </Link>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="mb-6 text-xl font-semibold text-slate-900">
-          Latest articles
-        </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {(featured.length > 0 ? featured : recent).map((article) => (
-            <ArticleCard key={article.slug} article={article} />
-          ))}
-        </div>
-        {recent.length === 0 && (
-          <p className="text-center text-slate-600">
-            No articles yet. Check back soon!
+    <>
+      <section className="hero">
+        <div className="site-shell hero-copy">
+          <p className="hero-brand">Digital CMO</p>
+          <h1 className="hero-headline">
+            Marketing leadership without the toolkit theatre.
+          </h1>
+          <p className="hero-lede">
+            Daily strategy on channels, content systems, and measurement — written
+            for global CMOs who need judgment, not another product roundup.
           </p>
-        )}
+          <div className="cta-row">
+            <Link href="/blog" className="btn btn--primary">
+              Read the blog
+            </Link>
+            <Link href="/about" className="btn btn--ghost">
+              About the voice
+            </Link>
+          </div>
+        </div>
       </section>
-    </div>
+
+      <section className="section section--tight">
+        <div className="site-shell">
+          <p className="section-kicker">Latest</p>
+          <h2 className="section-title">Recent briefs</h2>
+          <p className="section-lede">
+            New essays publish every day. Start with the latest strategic take.
+          </p>
+          {posts.length === 0 ? (
+            <p className="empty-state">No posts yet.</p>
+          ) : (
+            <div className="post-list">
+              {posts.map((post) => (
+                <PostListItem key={post.frontmatter.slug} post={post} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   );
 }

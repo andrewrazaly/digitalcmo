@@ -1,18 +1,20 @@
+import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
-import { ComparisonTable } from "@/components/content/ComparisonTable";
-import { AffiliateButton } from "@/components/content/AffiliateButton";
-import { ProsConsList } from "@/components/content/ProsConsList";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-export const mdxOptions = {
+export const mdxOptions: NonNullable<MDXRemoteProps["options"]> = {
   mdxOptions: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeSlug],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "wrap",
+          properties: { className: ["heading-anchor"] },
+        },
+      ],
+    ],
   },
-};
-
-export const mdxComponents = {
-  ComparisonTable,
-  AffiliateButton,
-  ProsConsList,
 };
