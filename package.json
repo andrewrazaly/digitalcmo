@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "test:qa": "tsx scripts/test-qa.ts",
-    "publish:trigger": "tsx scripts/trigger-publish.ts"
+    "test:topics": "tsx scripts/test-topics.ts",
+    "publish:trigger": "tsx scripts/trigger-publish.ts",
+    "ideate:trigger": "tsx scripts/trigger-ideate.ts"
   },
   "dependencies": {
     "ai": "^7.0.123",
