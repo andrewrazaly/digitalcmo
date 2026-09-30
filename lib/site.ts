@@ -1,6 +1,8 @@
 /**
  * Site identity. Prefer NEXT_PUBLIC_SITE_URL; fall back to Vercel deployment URL,
  * then a local placeholder until a custom domain is wired.
+ *
+ * Hosting project (locked): https://vercel.com/andrewrazalys-projects/digitalcmo
  */
 export function getSiteUrl(): string {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
